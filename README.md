@@ -27,4 +27,4 @@ nixosConfigurations.<name_of_new_server> = nixpkgs.lib.nixosSystem {
 </pre>
 
 ## Statistics
-![Code Lines](https://raw.githubusercontent.com/BMWAdam/tpvselect/badges/loc-badge.svg)
+![Repo Overview](https://raw.githubusercontent.com/BMWAdam/tpvselect/badges/badges/loc-badge.svg)
