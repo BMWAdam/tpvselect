@@ -23,7 +23,7 @@
         <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
             <path class="icon" fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"/>
         </svg>
-        <text x="20" y="0" class="stat">LOC: 13,075</text>
+        <text x="20" y="0" class="stat">LOC: 13,081</text>
     </g>
     <g transform="translate(260, 75)">
         <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
@@ -37,33 +37,33 @@
             <rect width="400" height="8" rx="4" fill="white"/>
         </mask>
         <g mask="url(#bar-mask)">
-            <rect x="0%" y="0" width="49.46845124282983%" height="8" fill="#8b949e"/>
-<rect x="49.46845124282983%" y="0" width="19.892925430210326%" height="8" fill="#8b949e"/>
-<rect x="69.36137667304016%" y="0" width="18.21032504780115%" height="8" fill="#8b949e"/>
-<rect x="87.5717017208413%" y="0" width="9.506692160611854%" height="8" fill="#8b949e"/>
-<rect x="97.07839388145315%" y="0" width="1.3307839388145315%" height="8" fill="#8b949e"/>
-<rect x="98.40917782026769%" y="0" width="0.7189292543021033%" height="8" fill="#8b949e"/>
+            <rect x="0%" y="0" width="49.445761027444384%" height="8" fill="#178600"/>
+<rect x="49.445761027444384%" y="0" width="19.88380093265041%" height="8" fill="#8b949e"/>
+<rect x="69.3295619600948%" y="0" width="18.20197232627475%" height="8" fill="#292929"/>
+<rect x="87.53153428636955%" y="0" width="9.502331626022475%" height="8" fill="#8b949e"/>
+<rect x="97.03386591239203%" y="0" width="1.3760415870346303%" height="8" fill="#cb171e"/>
+<rect x="98.40990749942667%" y="0" width="0.7185994954514181%" height="8" fill="#8b949e"/>
 
         </g>
     </g>
     
     
-    <circle cx="30" cy="131" r="5" fill="#8b949e"/>
-    <text x="42" y="135" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">C# <tspan fill="#c9d1d9">(6,468 lines)</tspan></text>
+    <circle cx="30" cy="131" r="5" fill="#178600"/>
+    <text x="42" y="135" fill="#178600" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">C# <tspan fill="#c9d1d9" font-weight="400">(6,468 lines)</tspan></text>
     
     <circle cx="230" cy="131" r="5" fill="#8b949e"/>
-    <text x="242" y="135" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">Razor <tspan fill="#c9d1d9">(2,601 lines)</tspan></text>
+    <text x="242" y="135" fill="#8b949e" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">Razor <tspan fill="#c9d1d9" font-weight="400">(2,601 lines)</tspan></text>
     
-    <circle cx="30" cy="159" r="5" fill="#8b949e"/>
-    <text x="42" y="163" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">JSON <tspan fill="#c9d1d9">(2,381 lines)</tspan></text>
+    <circle cx="30" cy="159" r="5" fill="#292929"/>
+    <text x="42" y="163" fill="#292929" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">JSON <tspan fill="#c9d1d9" font-weight="400">(2,381 lines)</tspan></text>
     
     <circle cx="230" cy="159" r="5" fill="#8b949e"/>
-    <text x="242" y="163" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">Nix <tspan fill="#c9d1d9">(1,243 lines)</tspan></text>
+    <text x="242" y="163" fill="#8b949e" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">Nix <tspan fill="#c9d1d9" font-weight="400">(1,243 lines)</tspan></text>
     
-    <circle cx="30" cy="187" r="5" fill="#8b949e"/>
-    <text x="42" y="191" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">YAML <tspan fill="#c9d1d9">(174 lines)</tspan></text>
+    <circle cx="30" cy="187" r="5" fill="#cb171e"/>
+    <text x="42" y="191" fill="#cb171e" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">YAML <tspan fill="#c9d1d9" font-weight="400">(180 lines)</tspan></text>
     
     <circle cx="230" cy="187" r="5" fill="#8b949e"/>
-    <text x="242" y="191" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">MSBuild script <tspan fill="#c9d1d9">(94 lines)</tspan></text>
+    <text x="242" y="191" fill="#8b949e" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">MSBuild script <tspan fill="#c9d1d9" font-weight="400">(94 lines)</tspan></text>
     
 </svg>
