@@ -26,7 +26,7 @@ jobs:
           STARS=$(gh api repos/${{ github.repository }} --jq '.stargazers_count')
           echo "STARS=$STARS" >> $GITHUB_ENV
 
-      - name: Generate Professional SVG Card
+      - name: Generate Colorful SVG Card
         env:
           REPO_NAME: ${{ github.repository }}
         run: |
@@ -51,15 +51,21 @@ jobs:
           langs = [(k, v['code']) for k, v in cloc_data.items() if k not in ['header', 'SUM']]
           langs.sort(key=lambda x: x[1], reverse=True)
 
-          # Common language colors
+          # 3. Comprehensive language color dictionary (derived from GitHub Linguist)
           colors = {
               "Python": "#3572A5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6", 
               "HTML": "#e34c26", "CSS": "#563d7c", "Shell": "#89e051", 
               "C++": "#f34b7d", "C": "#555555", "Rust": "#dea584", 
-              "Go": "#00ADD8", "Java": "#b07219", "Vue": "#41b883"
+              "Go": "#00ADD8", "Java": "#b07219", "Vue": "#41b883",
+              "C#": "#178600", "PHP": "#4F5D95", "Ruby": "#701516", "Kotlin": "#A97BFF",
+              "Swift": "#F05138", "Scala": "#DC322F", "Objective-C": "#438eff", "Dart": "#00B4AB",
+              "R": "#198CE7", "Haskell": "#5e5086", "Elixir": "#6e4a7e", "Lua": "#000080",
+              "Julia": "#a270ba", "Perl": "#0298c3", "SQL": "#e38c00", "Arduino": "#bd79d1",
+              "YAML": "#cb171e", "JSON": "#292929", "Markdown": "#083fa1", "Dockerfile": "#384d54",
+              "Makefile": "#427819", "CMake": "#0032aa"
           }
 
-          # 3. Build the language progress bar and legend
+          # 4. Build the language progress bar and colorful legend
           top_langs = langs[:6] # Display up to top 6 languages
           bar_svg = ""
           x_offset = 0
@@ -68,7 +74,7 @@ jobs:
 
           for i, (lang, lines) in enumerate(top_langs):
               perc = (lines / total_loc) * 100 if total_loc > 0 else 0
-              color = colors.get(lang, "#8b949e") # Fallback color
+              color = colors.get(lang, "#8b949e") # Fallback neutral color
               
               # Add segment to the progress bar
               bar_svg += f'<rect x="{x_offset}%" y="0" width="{perc}%" height="8" fill="{color}"/>\n'
@@ -77,12 +83,14 @@ jobs:
               # Add to the legend (2 columns)
               col_x = 30 + (i % 2) * 200
               row_y = legend_y + (i // 2) * 28
+              
+              # Construct a legend item where the language name uses its specific color
               legend_svg += f'''
               <circle cx="{col_x}" cy="{row_y - 4}" r="5" fill="{color}"/>
-              <text x="{col_x + 12}" y="{row_y}" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">{lang} <tspan fill="#c9d1d9">({lines:,} lines)</tspan></text>
+              <text x="{col_x + 12}" y="{row_y}" fill="{color}" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">{lang} <tspan fill="#c9d1d9" font-weight="400">({lines:,} lines)</tspan></text>
               '''
 
-          # 4. Construct the final professional SVG
+          # 5. Construct the final professional, colorful SVG
           svg_template = f'''<svg width="450" height="230" viewBox="0 0 450 230" fill="none" xmlns="http://www.w3.org/2000/svg">
               <style>
                   .header {{ font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }}
