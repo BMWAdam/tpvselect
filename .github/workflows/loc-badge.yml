@@ -1,4 +1,4 @@
-name: Repo Overview Generator
+name: Repo Overview Generator (Dynamic Colors)
 
 on:
   push:
@@ -22,17 +22,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Fetch the exact star count on the run using GitHub's official CLI
           STARS=$(gh api repos/${{ github.repository }} --jq '.stargazers_count')
           echo "STARS=$STARS" >> $GITHUB_ENV
 
-      - name: Generate Colorful SVG Card
+      - name: Generate Dynamic SVG Card
         env:
           REPO_NAME: ${{ github.repository }}
         run: |
           cat << 'EOF' > generate_svg.py
           import json
           import os
+          import hashlib
+          import colorsys
 
           # 1. Load the dynamically generated cloc data
           try:
@@ -51,8 +52,8 @@ jobs:
           langs = [(k, v['code']) for k, v in cloc_data.items() if k not in ['header', 'SUM']]
           langs.sort(key=lambda x: x[1], reverse=True)
 
-          # 3. Comprehensive language color dictionary (derived from GitHub Linguist)
-          colors = {
+          # 3. Base language color dictionary
+          colors_dict = {
               "Python": "#3572A5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6", 
               "HTML": "#e34c26", "CSS": "#563d7c", "Shell": "#89e051", 
               "C++": "#f34b7d", "C": "#555555", "Rust": "#dea584", 
@@ -65,8 +66,36 @@ jobs:
               "Makefile": "#427819", "CMake": "#0032aa"
           }
 
-          # 4. Build the language progress bar and colorful legend
-          top_langs = langs[:6] # Display up to top 6 languages
+          def get_color_for_lang(lang_name):
+              # Helper to generate a consistent, bright HSL color based on language name hash
+              def generate_bright_color(name):
+                  # Create a deterministic MD5 hash of the name, extract first 4 hex chars, and map to 0-360 Hue
+                  h = int(hashlib.md5(name.encode()).hexdigest()[:4], 16) % 360
+                  # hls_to_rgb uses ranges 0.0 - 1.0 (Hue, Lightness, Saturation)
+                  # 65% Lightness ensures visibility on dark backgrounds, 70% Saturation makes it colorful
+                  r, g, b = colorsys.hls_to_rgb(h / 360.0, 0.65, 0.70)
+                  return f"#{int(r*255):02x}{int(g*255):02x}{int(b*255):02x}"
+
+              if lang_name in colors_dict:
+                  hex_color = colors_dict[lang_name].lstrip('#')
+                  # Handle 3-char and 6-char hex codes
+                  if len(hex_color) == 3:
+                      hex_color = ''.join([c*2 for c in hex_color])
+                  r, g, b = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+                  
+                  # Calculate perceived brightness (standard formula)
+                  brightness = (r * 299 + g * 587 + b * 114) / 1000
+                  
+                  # JSON is ~41 brightness, C# is ~85. Threshold 80 replaces the dark ones but keeps C#
+                  if brightness < 80: 
+                      return generate_bright_color(lang_name)
+                  return f"#{hex_color}"
+              
+              # Fallback for missing languages
+              return generate_bright_color(lang_name)
+
+          # 4. Build the language progress bar and legend
+          top_langs = langs[:6]
           bar_svg = ""
           x_offset = 0
           legend_svg = ""
@@ -74,23 +103,20 @@ jobs:
 
           for i, (lang, lines) in enumerate(top_langs):
               perc = (lines / total_loc) * 100 if total_loc > 0 else 0
-              color = colors.get(lang, "#8b949e") # Fallback neutral color
+              color = get_color_for_lang(lang)
               
-              # Add segment to the progress bar
               bar_svg += f'<rect x="{x_offset}%" y="0" width="{perc}%" height="8" fill="{color}"/>\n'
               x_offset += perc
 
-              # Add to the legend (2 columns)
               col_x = 30 + (i % 2) * 200
               row_y = legend_y + (i // 2) * 28
               
-              # Construct a legend item where the language name uses its specific color
               legend_svg += f'''
               <circle cx="{col_x}" cy="{row_y - 4}" r="5" fill="{color}"/>
               <text x="{col_x + 12}" y="{row_y}" fill="{color}" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">{lang} <tspan fill="#c9d1d9" font-weight="400">({lines:,} lines)</tspan></text>
               '''
 
-          # 5. Construct the final professional, colorful SVG
+          # 5. Construct the final SVG
           svg_template = f'''<svg width="450" height="230" viewBox="0 0 450 230" fill="none" xmlns="http://www.w3.org/2000/svg">
               <style>
                   .header {{ font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }}
