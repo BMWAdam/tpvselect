@@ -1,0 +1,41 @@
+name: Generate LOC Badge
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  cloc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install cloc
+        run: sudo apt-get install -y cloc
+
+      - name: Count lines of code
+        run: |
+          cloc --json . > cloc.json
+
+      - name: Generate badge
+        run: |
+          TOTAL=$(jq '.SUM.code' cloc.json)
+          echo "<svg xmlns='http://www.w3.org/2000/svg' width='150' height='20'>
+            <rect width='150' height='20' fill='#555'/>
+            <rect x='60' width='90' height='20' fill='#4c1'/>
+            <text x='30' y='14' fill='#fff' font-family='Verdana' font-size='11'>LOC</text>
+            <text x='105' y='14' fill='#fff' font-family='Verdana' font-size='11'>$TOTAL</text>
+          </svg>" > loc-badge.svg
+
+      - name: Commit badge
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          mkdir -p badges
+          mv loc-badge.svg badges/
+          git add badges/loc-badge.svg
+          git commit -m "Update LOC badge" || echo "No changes"
+          git push
