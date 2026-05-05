@@ -1,3 +1,6 @@
+![Repo Overview](https://raw.githubusercontent.com/BMWAdam/tpvselect/badges/badges/loc-badge.svg)
+
+
 # TPV - SELECT
 ## Deployment
 - for Hetzner@178.104.211.77
@@ -25,6 +28,3 @@ nixosConfigurations.<name_of_new_server> = nixpkgs.lib.nixosSystem {
   ];
 };
 </pre>
-
-## Statistics
-![Repo Overview](https://raw.githubusercontent.com/BMWAdam/tpvselect/badges/badges/loc-badge.svg)
