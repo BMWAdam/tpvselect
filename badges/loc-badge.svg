@@ -1,21 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="20" role="img" aria-label="LOC">
-  <title>Lines of Code</title>
-  <linearGradient id="s" x2="0" y2="100%">
-    <stop offset="0" stop-color="#bbb"/>
-    <stop offset="1" stop-color="#999"/>
-  </linearGradient>
-  <clipPath id="r">
-    <rect width="120" height="20" rx="3" fill="#fff"/>
-  </clipPath>
-  <g clip-path="url(#r)">
-    <rect width="50" height="20" fill="#555"/>
-    <rect x="50" width="70" height="20" fill="#4c1"/>
-    <rect width="120" height="20" fill="url(#s)"/>
-  </g>
-  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="11">
-    <text x="26" y="15" fill="#010101" fill-opacity=".3">LOC</text>
-    <text x="26" y="14">LOC</text>
-    <text x="84" y="15" fill="#010101" fill-opacity=".3">$TOTAL</text>
-    <text x="84" y="14">$TOTAL</text>
-  </g>
+<svg width="450" height="230" viewBox="0 0 450 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }
+        .stat { font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+        .icon { fill: #8b949e; }
+    </style>
+    <rect width="449" height="229" x="0.5" y="0.5" fill="#0d1117" stroke="#30363d" rx="6"/>
+    
+    <g transform="translate(25, 35)">
+        <svg x="0" y="-15" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path class="icon" fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
+        </svg>
+        <text x="25" y="0" class="header">BMWAdam/tpvselect</text>
+    </g>
+    
+    <g transform="translate(25, 75)">
+        <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
+            <path class="icon" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+        </svg>
+        <text x="20" y="0" class="stat">Stars: 0</text>
+    </g>
+    <g transform="translate(130, 75)">
+        <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
+            <path class="icon" fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"/>
+        </svg>
+        <text x="20" y="0" class="stat">LOC: 13,075</text>
+    </g>
+    <g transform="translate(260, 75)">
+        <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
+            <path class="icon" fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"/>
+        </svg>
+        <text x="20" y="0" class="stat">Files: 119</text>
+    </g>
+
+    <g transform="translate(25, 105)">
+        <mask id="bar-mask">
+            <rect width="400" height="8" rx="4" fill="white"/>
+        </mask>
+        <g mask="url(#bar-mask)">
+            <rect x="0%" y="0" width="49.46845124282983%" height="8" fill="#8b949e"/>
+<rect x="49.46845124282983%" y="0" width="19.892925430210326%" height="8" fill="#8b949e"/>
+<rect x="69.36137667304016%" y="0" width="18.21032504780115%" height="8" fill="#8b949e"/>
+<rect x="87.5717017208413%" y="0" width="9.506692160611854%" height="8" fill="#8b949e"/>
+<rect x="97.07839388145315%" y="0" width="1.3307839388145315%" height="8" fill="#8b949e"/>
+<rect x="98.40917782026769%" y="0" width="0.7189292543021033%" height="8" fill="#8b949e"/>
+
+        </g>
+    </g>
+    
+    
+    <circle cx="30" cy="131" r="5" fill="#8b949e"/>
+    <text x="42" y="135" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">C# <tspan fill="#c9d1d9">(6,468 lines)</tspan></text>
+    
+    <circle cx="230" cy="131" r="5" fill="#8b949e"/>
+    <text x="242" y="135" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">Razor <tspan fill="#c9d1d9">(2,601 lines)</tspan></text>
+    
+    <circle cx="30" cy="159" r="5" fill="#8b949e"/>
+    <text x="42" y="163" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">JSON <tspan fill="#c9d1d9">(2,381 lines)</tspan></text>
+    
+    <circle cx="230" cy="159" r="5" fill="#8b949e"/>
+    <text x="242" y="163" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">Nix <tspan fill="#c9d1d9">(1,243 lines)</tspan></text>
+    
+    <circle cx="30" cy="187" r="5" fill="#8b949e"/>
+    <text x="42" y="191" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">YAML <tspan fill="#c9d1d9">(174 lines)</tspan></text>
+    
+    <circle cx="230" cy="187" r="5" fill="#8b949e"/>
+    <text x="242" y="191" fill="#8b949e" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">MSBuild script <tspan fill="#c9d1d9">(94 lines)</tspan></text>
+    
 </svg>
