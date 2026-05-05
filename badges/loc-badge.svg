@@ -17,13 +17,13 @@
         <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
             <path class="icon" fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
         </svg>
-        <text x="20" y="0" class="stat">Stars: 0</text>
+        <text x="20" y="0" class="stat">Stars: 1</text>
     </g>
     <g transform="translate(130, 75)">
         <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
             <path class="icon" fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"/>
         </svg>
-        <text x="20" y="0" class="stat">LOC: 13,098</text>
+        <text x="20" y="0" class="stat">LOC: 13,097</text>
     </g>
     <g transform="translate(260, 75)">
         <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
@@ -37,12 +37,12 @@
             <rect width="400" height="8" rx="4" fill="white"/>
         </mask>
         <g mask="url(#bar-mask)">
-            <rect x="0%" y="0" width="49.381584974805314%" height="8" fill="#178600"/>
-<rect x="49.381584974805314%" y="0" width="19.857993586807147%" height="8" fill="#e4d567"/>
-<rect x="69.23957856161246%" y="0" width="18.17834783936479%" height="8" fill="#67d1e4"/>
-<rect x="87.41792640097725%" y="0" width="9.48999847304932%" height="8" fill="#e46773"/>
-<rect x="96.90792487402658%" y="0" width="1.5040464193006566%" height="8" fill="#67d5e4"/>
-<rect x="98.41197129332723%" y="0" width="0.7176668193617346%" height="8" fill="#6790e4"/>
+            <rect x="0%" y="0" width="49.38535542490647%" height="8" fill="#178600"/>
+<rect x="49.38535542490647%" y="0" width="19.859509811407193%" height="8" fill="#e4d567"/>
+<rect x="69.24486523631367%" y="0" width="18.179735817362754%" height="8" fill="#67d1e4"/>
+<rect x="87.42460105367643%" y="0" width="9.490723066351073%" height="8" fill="#e46773"/>
+<rect x="96.91532412002749%" y="0" width="1.5041612583034283%" height="8" fill="#67d5e4"/>
+<rect x="98.41948537833092%" y="0" width="0.7177216156371689%" height="8" fill="#6790e4"/>
 
         </g>
     </g>
