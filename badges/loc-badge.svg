@@ -23,7 +23,7 @@
         <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
             <path class="icon" fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"/>
         </svg>
-        <text x="20" y="0" class="stat">LOC: 13,097</text>
+        <text x="20" y="0" class="stat">LOC: 13,095</text>
     </g>
     <g transform="translate(260, 75)">
         <svg x="0" y="-12" viewBox="0 0 16 16" width="14" height="14">
@@ -37,12 +37,12 @@
             <rect width="400" height="8" rx="4" fill="white"/>
         </mask>
         <g mask="url(#bar-mask)">
-            <rect x="0%" y="0" width="49.38535542490647%" height="8" fill="#178600"/>
-<rect x="49.38535542490647%" y="0" width="19.859509811407193%" height="8" fill="#e4d567"/>
-<rect x="69.24486523631367%" y="0" width="18.179735817362754%" height="8" fill="#67d1e4"/>
-<rect x="87.42460105367643%" y="0" width="9.490723066351073%" height="8" fill="#e46773"/>
-<rect x="96.91532412002749%" y="0" width="1.5041612583034283%" height="8" fill="#67d5e4"/>
-<rect x="98.41948537833092%" y="0" width="0.7177216156371689%" height="8" fill="#6790e4"/>
+            <rect x="0%" y="0" width="49.39289805269187%" height="8" fill="#178600"/>
+<rect x="49.39289805269187%" y="0" width="19.847269950362733%" height="8" fill="#e4d567"/>
+<rect x="69.2401680030546%" y="0" width="18.182512409316534%" height="8" fill="#67d1e4"/>
+<rect x="87.42268041237114%" y="0" width="9.49217258495609%" height="8" fill="#e46773"/>
+<rect x="96.91485299732723%" y="0" width="1.5043909889270715%" height="8" fill="#67d5e4"/>
+<rect x="98.4192439862543%" y="0" width="0.7178312332951509%" height="8" fill="#6790e4"/>
 
         </g>
     </g>
@@ -52,7 +52,7 @@
     <text x="42" y="135" fill="#178600" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">C# <tspan fill="#c9d1d9" font-weight="400">(6,468 lines)</tspan></text>
     
     <circle cx="230" cy="131" r="5" fill="#e4d567"/>
-    <text x="242" y="135" fill="#e4d567" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">Razor <tspan fill="#c9d1d9" font-weight="400">(2,601 lines)</tspan></text>
+    <text x="242" y="135" fill="#e4d567" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">Razor <tspan fill="#c9d1d9" font-weight="400">(2,599 lines)</tspan></text>
     
     <circle cx="30" cy="159" r="5" fill="#67d1e4"/>
     <text x="42" y="163" fill="#67d1e4" font-weight="500" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">JSON <tspan fill="#c9d1d9" font-weight="400">(2,381 lines)</tspan></text>
