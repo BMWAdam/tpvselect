@@ -5,7 +5,6 @@
     <AuthorizeView >
         <Authorized>
             <MudText aria-label="navmenu-header-loggedin" Typo="Typo.body2" Class="px-4 mud-text-secondary">@context.User.Identity?.Name</MudText>
-            <MudDivider Class="my-2"/>
         </Authorized>
         <NotAuthorized>
             <MudLink aria-label="navmenu-header-login" OnClick="@(() => navigationManager.NavigateTo("login", forceLoad: true))" Class="px-4">Přihlásit se</MudLink>

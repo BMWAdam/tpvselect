@@ -39,8 +39,7 @@
                 <MudButton aria-label="@($"SortableList-CoursePicker-{item.Name}-btn")"
                     OnClick="@(() => navigationManager.NavigateTo($"/course_info/{item.Id}"))"
                     EndIcon="@Icons.Material.Outlined.Info">
-                    <MudLink aria-label="@($"SortableList-CoursePicker-{item.Name}-link")"
-                        Href="@($"/course_info/{item.Id}")">@item.Name</MudLink>
+                    <MudLink aria-label="@($"SortableList-CoursePicker-{item.Name}-link")">@item.Name</MudLink>
                 </MudButton>
                 <MudTooltip aria-label="@($"SortableList-CoursePicker-{item.Name}-tooltip")"
                     Text="@item.Extended?.Availability?.GetDescription()">

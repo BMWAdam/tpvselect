@@ -920,10 +920,10 @@ public class ServerAdminService(
         try
         {
             await using var ctx = _factory.CreateDbContext();
-            var entityToDelete = ctx.OrderCourses.Find(Id);
+            var entityToDelete = ctx.HistoryStudentCourses.Find(Id);
             if (entityToDelete != null)
             {
-                ctx.OrderCourses.Remove(entityToDelete);
+                ctx.HistoryStudentCourses.Remove(entityToDelete);
                 await ctx.SaveChangesAsync();
             }
             else
